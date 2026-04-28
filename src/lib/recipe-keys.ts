@@ -17,12 +17,17 @@ export const recipeKeys = {
     search?: string;
     tags?: string[];
     difficulty?: string;
+    page?: number;
+    pageSize?: number;
     cursor?: string;
   } = {}) => [...recipeKeys.lists(), filters] as const,
 
   details: () => [...recipeKeys.all, 'detail'] as const,
 
   detail: (id: string) => [...recipeKeys.details(), id] as const,
+
+  /** Distinct tag strings for autocomplete / filters */
+  tagOptions: () => [...recipeKeys.all, 'tag-options'] as const,
 } as const;
 
 export type RecipeFilters = Parameters<typeof recipeKeys.list>[0];

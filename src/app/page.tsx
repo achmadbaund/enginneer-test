@@ -28,9 +28,12 @@ export default function HomePage() {
         </Typography>
       </Box>
 
-      <Box>
-        <Link component={NextLink} href="/recipes-example" variant="button">
-          View example page →
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+        <Link component={NextLink} href="/recipes" variant="button">
+          Open Recipe Manager →
+        </Link>
+        <Link component={NextLink} href="/recipes-example" variant="button" color="inherit">
+          View scaffold example →
         </Link>
       </Box>
     </Container>

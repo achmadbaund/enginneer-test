@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
   // form. Candidates may enable it for their own code.
   reactStrictMode: false,
 
+  // Mongoose/MongoDB must run as Node externals — bundling them breaks dev with
+  // missing vendor chunks (e.g. Cannot find module './vendor-chunks/mongodb@*.js').
+  serverExternalPackages: ['mongoose', 'mongodb', 'mongodb-memory-server'],
+
   typescript: {
     ignoreBuildErrors: false,
   },
@@ -14,7 +18,8 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: false,
   },
 
-  transpilePackages: ['@mui/material', '@mui/system', '@mui/icons-material'],
+  // Include @mui/material-nextjs so App Router + Emotion cache resolves correctly under Webpack.
+  transpilePackages: ['@mui/material', '@mui/system', '@mui/material-nextjs'],
 };
 
 export default nextConfig;
