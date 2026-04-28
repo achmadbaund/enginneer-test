@@ -118,3 +118,7 @@ pnpm reset   # wipes and re-seeds with original 100 recipes
 ## Deliverables
 
 See `CANDIDATE.md` for the full task brief and submission instructions.
+
+## Submission Note
+
+When opening a PR from a fork, target the upstream repository `main` branch and ensure your source branch contains commits that differ from your fork's `main`.
